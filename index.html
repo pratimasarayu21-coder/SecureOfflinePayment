@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Offline Payment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">₹</span>
+            <span>SecurePay</span>
+        </div>
+        <span class="status">
+            <span class="status-dot"></span>
+            Offline Mode
+        </span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">DIGITAL WALLET</p>
+                <h1>Secure Offline Payments</h1>
+                <p class="subtitle">
+                    Transfer digital value, even without an internet connection.
+                </p>
+            </div>
+            <div class="security-badge">🔒 Secure Demo</div>
+        </section>
+
+        <section class="wallet-grid">
+            <article class="wallet-card alice">
+                <p class="card-label">ALICE'S WALLET</p>
+                <h2 id="aliceBalance">₹500.00</h2>
+                <p class="card-note">Demo account · USER-A</p>
+            </article>
+
+            <article class="wallet-card bob">
+                <p class="card-label">BOB'S WALLET</p>
+                <h2 id="bobBalance">₹200.00</h2>
+                <p class="card-note">Demo account · USER-B</p>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <h2>Send a Payment</h2>
+                <p class="panel-description">
+                    Create a demo transfer between the two wallets.
+                </p>
+
+                <form id="paymentForm">
+                    <label for="sender">Pay from</label>
+                    <select id="sender">
+                        <option value="Alice">Alice</option>
+                        <option value="Bob">Bob</option>
+                    </select>
+
+                    <label for="receiver">Pay to</label>
+                    <select id="receiver">
+                        <option value="Bob">Bob</option>
+                        <option value="Alice">Alice</option>
+                    </select>
+
+                    <label for="amount">Amount (INR)</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        min="1"
+                        step="0.01"
+                        placeholder="Enter amount"
+                        required
+                    >
+
+                    <button type="submit" id="payButton">
+                        Make Demo Payment →
+                    </button>
+                </form>
+
+                <p id="message" class="message" role="status">
+                    Ready for a demo transaction.
+                </p>
+            </article>
+
+            <article class="panel">
+                <h2>Security Overview</h2>
+                <p class="panel-description">
+                    Security features planned for this prototype.
+                </p>
+
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <div>
+                        <strong>Offline-ready interface</strong>
+                        <p>Runs locally in your browser.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🔐</span>
+                    <div>
+                        <strong>Digital signatures</strong>
+                        <p>Cryptographic verification — to be implemented.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">↻</span>
+                    <div>
+                        <strong>Transaction synchronization</strong>
+                        <p>Server reconciliation — to be implemented.</p>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    This is a demonstration only. No real money is transferred.
+                    Payments are not cryptographically secured yet.
+                </div>
+            </article>
+        </section>
+
+        <section class="panel history-panel">
+            <div class="history-heading">
+                <div>
+                    <h2>Transaction History</h2>
+                    <p class="panel-description">
+                        Demo payments made during this session.
+                    </p>
+                </div>
+                <span id="transactionCount" class="count">0 transactions</span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionList">
+                        <tr>
+                            <td colspan="5" class="empty">
+                                No transactions yet. Make your first demo payment!
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            SecurePay · Academic Project Prototype · Demo currency only
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
